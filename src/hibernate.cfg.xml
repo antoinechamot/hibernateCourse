@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/hello-world?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">P@ssw0rd</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Create/update tables automatically using mapping metadata -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+         
+        <!-- Use Annotation-based mapping metadata -->
+         <mapping class="domain.Person"/>     
+        <mapping class="domain.Guide"/>
+        <mapping class="domain.Student"/>  
+        <mapping class="domain.Customer"/> 
+        <mapping class="domain.Passport"/>  
+        <mapping class="domain.Actor"/> 
+        <mapping class="domain.Movie"/>   
+        <mapping class="domain.Employee"/>  
+        <mapping class="domain.Friend"/>
+          <mapping class="domain.ParentPrimaryKey"/>  
+         <mapping class="domain.Parent"/> 
+        
+     <mapping class="domain.Child"/> 
+        
+    </session-factory>
+</hibernate-configuration>
